@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@drawable/bg_search"
+            android:cursorVisible="true"
+            android:drawableLeft="#00ffffff"
+            android:drawablePadding="15dp"
+            android:fadingEdgeLength="@dimen/activity_horizontal_margin"
+            android:hint="请输入化学品名称或首字母" />
+        <!--<Button-->
+        <!--android:id="@+id/bt_search"-->
+        <!--android:layout_width="0dip"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1"-->
+        <!--android:text="Search"-->
+        <!--android:background="@color/color1" />-->
+        <ImageButton
+            android:id="@+id/bt_search"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:src="@drawable/bt_bgsearch" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#999999" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <!--<Button-->
+        <!--android:id="@+id/bt_cnSearch"-->
+        <!--android:layout_width="0dip"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@color/colorAccent"-->
+        <!--android:text="中文/拼音" />-->
+
+        <!--<Button-->
+        <!--android:id="@+id/bt_enSearch"-->
+        <!--android:layout_width="0dip"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--android:text="英文/首字母" />-->
+        <ImageButton
+            android:id="@+id/bt_cnSearch"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:src="@drawable/bt_cn_selected" />
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="0.01"
+            android:background="#999999" />
+
+        <ImageButton
+            android:id="@+id/bt_enSearch"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:src="@drawable/bt_en_unselected" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="6"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#999999" />
+
+        <ListView
+            android:id="@+id/lv_searchResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <!--android:divider="#00000000"-->
+
+    </LinearLayout>
+
+
+</LinearLayout>

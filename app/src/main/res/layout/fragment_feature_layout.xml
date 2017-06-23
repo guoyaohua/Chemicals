@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="分子式："
+                android:layout_marginTop="24dip"
+                android:textColor="@color/textColor_green"
+                android:textSize="@dimen/text_size_1" />
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="@color/color1" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="C2H4"
+                android:layout_marginTop="24dip"
+               android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:id="@+id/tv_formula" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="分子量："
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_green"
+                android:textSize="@dimen/text_size_1" />
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="@color/color1" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="28.05"
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:id="@+id/tv_weight" />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="熔   点："
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_green"
+                android:textSize="@dimen/text_size_1" />
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="@color/color1" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="-169.4℃"
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:id="@+id/tv_melting_point" />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="沸   点："
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_green"
+                android:textSize="@dimen/text_size_1" />
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="@color/color1" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="-103.9℃"
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:id="@+id/tv_boiling_point" />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="闪   点："
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_green"
+                android:textSize="@dimen/text_size_1"/>
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="@color/color1" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="不详"
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:id="@+id/tv_flash_point" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="凝固点："
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_green"
+                android:textSize="@dimen/text_size_1" />
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="@color/color1" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="不详"
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:id="@+id/tv_freezing_point" />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="蒸汽压："
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_green"
+                android:textSize="@dimen/text_size_1"/>
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="@color/color1" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="8100kPa(15℃)"
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:id="@+id/tv_vapour_pressure" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="相对蒸汽密度："
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_green"
+                android:textSize="@dimen/text_size_1" />
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="@color/color1" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0.98(空气=1)"
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:id="@+id/tv_vapor_density" />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="气体密度："
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_green"
+                android:textSize="@dimen/text_size_1" />
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="@color/color1" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="1.260g/L"
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:id="@+id/tv_gas_density" />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="相对密度："
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_green"
+                android:textSize="@dimen/text_size_1" />
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="@color/color1" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0.61(水=1)"
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:id="@+id/tv_relative_density" />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="临界压力："
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_green"
+                android:textSize="@dimen/text_size_1" />
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="@color/color1" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="5.04MPa"
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:id="@+id/tv_critical_pressure" />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="临界温度："
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_green"
+                android:textSize="@dimen/text_size_1" />
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="@color/color1" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="9.2℃"
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:id="@+id/tv_critical_temperature" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="电离电位："
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_green"
+                android:textSize="@dimen/text_size_1" />
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="@color/color1" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="不详"
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:id="@+id/tv_ionization_potential" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="爆炸极限："
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_green"
+                android:textSize="@dimen/text_size_1" />
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="@color/color1" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="2.7%—36.0%"
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:id="@+id/tv_explosion_limit" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="自燃温度："
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_green"
+                android:textSize="@dimen/text_size_1" />
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="@color/color1" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="425℃"
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:id="@+id/tv_autogenous_ignition" />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="最小点火能："
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_green"
+                android:textSize="@dimen/text_size_1"/>
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="@color/color1" />
+
+            <TextView
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0.096mJ"
+                android:layout_marginTop="@dimen/margin_1"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:id="@+id/tv_ignition_energy" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/color1"
+          />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="◆特性描述"
+                android:textColor="@color/color2"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+               android:textSize="@dimen/text_size_2" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:text="无色气体，带有甜味。不溶于水。有机过氧化物、烷基锂等引发剂存在时，易发生聚合，放出大量的热量"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:lineSpacingMultiplier="1.6"
+                android:typeface="sans"
+                android:id="@+id/tv_characterization" />
+
+
+        </LinearLayout>
+
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/color1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="◆主要用途"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+
+                android:textColor="@color/color2"
+                android:textSize="@dimen/text_size_2"
+                  />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="是合成纤维、合成橡胶、合成塑料的基本化工原料。用于生产聚乙烯、二氯乙烷、氯乙烯、环氧乙烷、乙二醇、苯乙烯、乙苯等\n也可用作水果、蔬菜的催熟剂"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+
+                android:lineSpacingMultiplier="1.6"
+                android:typeface="sans"
+                android:id="@+id/tv_application" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@color/color1" />
+    </LinearLayout>
+</ScrollView>

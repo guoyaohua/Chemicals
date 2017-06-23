@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="◆急救"
+                android:textColor="@color/color2"
+                android:textSize="@dimen/text_size_2"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_aid"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="1.皮肤接触：如果发生冻伤，将患部浸泡于保持在38℃~42℃的温水中复温。不要涂擦。不要使用热水或辐射热。使用清洁、干燥的敷料包扎。就医。\n2.吸入：迅速脱离现场，至空气新鲜处，保持呼吸道流畅。如有呼吸困难，给输氧，呼吸心跳停止，立即进行心肺复苏术。就医。"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:lineSpacingMultiplier="1.6"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:typeface="sans" />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+           android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@color/color1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="◆灭火"
+
+                android:textColor="@color/color2"
+                android:textSize="@dimen/text_size_2"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+
+               />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_fire"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="灭火剂：干粉、二氧化碳、雾状水、泡沫。 1.若不能切断泄漏气源，则不允许熄灭泄漏出的火焰。 2.在确保安全的前提下，将容器移离火场。 储罐火灾： 1.尽可能远距离灭火或使用遥控水枪或水炮扑救。 2.用大量水冷却容器，直至火灾扑灭。 3.容器突然发出异常声音或异常现象，立即撤离。 4.当大火已经在货船蔓延，立即撤离，货船可能爆炸。"
+
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:lineSpacingMultiplier="1.6"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:typeface="sans" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@color/color1" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="◆泄漏处置"
+                android:textColor="@color/color2"
+                android:textSize="@dimen/text_size_2"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+ />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:id="@+id/tv_leak"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="1.消除所有点火源（泄漏区附近禁止吸烟，消除所有明火、火花或火焰）。 2.使用防爆的通讯工具。 3.作业时所有设备应接地。 4.在确保安全的情况下，采用关阀、堵漏等措施，以切断泄漏源。 5.防止气体通过通风系统扩散或进入限制性空间。 6.喷雾状水改变蒸气云流向。 7.隔离泄露区直至气体散尽。"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:lineSpacingMultiplier="1.6"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+
+                android:typeface="sans" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@color/color1" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="◆疏散和隔离(ERG)"
+                android:textColor="@color/color2"
+                android:textSize="@dimen/text_size_2"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+ />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_evacuate"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="1.泄漏：     污染范围不明的情况下，初始隔离至少100m,下风向疏散至少800m。然后进行气体浓度检测，根据有害气体的实际浓度，调整隔离、疏散距离。 2.火灾：     火场内如原油储罐、槽车或罐车，四周隔离1600米。考虑撤离隔离区的人员、物资，疏散无关人员并划定警戒区，在上风处停留。"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:lineSpacingMultiplier="1.6"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:typeface="sans" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@color/color1" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="◆环境应急"
+                android:textColor="@color/color2"
+                android:textSize="@dimen/text_size_2"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+ />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:id="@+id/tv_emergency"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="    用沙土或其他不燃材料吸附或吸收泄漏物。并收集吸附物，运输至危险废物处置场所进行焚烧处理。如果大量泄漏则应构筑围堰或挖坑收集，并用泡沫覆盖，降低蒸汽灾害。用防爆泵转移到槽车或专用收集器内，回收并运输到危险废物处置场所进行处置。"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:lineSpacingMultiplier="1.6"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:typeface="sans" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@color/color1" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="◆废物处置"
+                android:textColor="@color/color2"
+                android:textSize="@dimen/text_size_2"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+  />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:id="@+id/tv_disposal"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="废弃物采用焚烧法处置"
+                android:textColor="@color/textColor_black"
+                android:textSize="@dimen/text_size_1"
+                android:lineSpacingMultiplier="1.6"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:typeface="sans" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+             android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@color/color1" />
+    </LinearLayout>
+</ScrollView>

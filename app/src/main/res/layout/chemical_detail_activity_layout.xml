@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5FBDEE"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_chemical_name"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_marginLeft="@dimen/margin_1"
+        android:layout_marginRight="@dimen/margin_1"
+        android:layout_marginTop="16dip"
+        android:layout_weight="1"
+        android:background="#1080E1"
+        android:gravity="center"
+        android:text="乙烯"
+        android:textColor="#EE8B5F"
+        android:textSize="24dip" />
+
+    <HorizontalScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_marginLeft="@dimen/margin_1"
+        android:layout_marginRight="@dimen/margin_1"
+        android:layout_marginBottom="3dip"
+        android:layout_marginTop="3dip"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/ib_detail_info"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:scaleType="fitXY"
+                android:src="@drawable/jbxx" />
+
+            <ImageButton
+                android:id="@+id/ib_detail_features"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:scaleType="fitXY"
+                android:src="@drawable/lhtxjyt_uns" />
+
+            <ImageButton
+                android:id="@+id/ib_detail_danger"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:scaleType="fitXY"
+                android:src="@drawable/wxx_uns" />
+
+            <ImageButton
+                android:id="@+id/ib_detail_protect"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:scaleType="fitXY"
+                android:src="@drawable/fhjy_uns" />
+
+            <ImageButton
+                android:id="@+id/ib_detail_disposal"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:scaleType="fitXY"
+                android:src="@drawable/yjcz_uns" />
+
+            <ImageButton
+                android:id="@+id/ib_detail_detection"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:scaleType="fitXY"
+                android:src="@drawable/jcff_uns" />
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <android.support.v4.view.ViewPager
+        android:background="@color/colorAccent"
+        android:layout_marginLeft="@dimen/margin_1"
+        android:layout_marginRight="@dimen/margin_1"
+        android:id="@+id/viewpager_chemical_detail"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="9">
+
+    </android.support.v4.view.ViewPager>
+</LinearLayout>

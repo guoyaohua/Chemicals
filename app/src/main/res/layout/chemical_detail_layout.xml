@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:orientation="vertical">
+// android:background="#ccffff"
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/bt_detail_info"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/jbxx"
+                android:background="#00000000"
+                />
+
+            <ImageButton
+                android:id="@+id/bt_detail_features"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/lhtxjyt_uns"
+                android:background="#00000000"
+                />
+
+            <ImageButton
+                android:id="@+id/bt_detail_danger"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:background="#00000000"
+                android:src="@drawable/wxx_uns" />
+
+            <ImageButton
+                android:id="@+id/bt_detail_protect"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@drawable/fhjy_uns"
+                android:scaleType="fitXY"
+                android:background="#00000000"/>
+
+            <ImageButton
+                android:id="@+id/bt_detail_disposal"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@drawable/yjcz_uns"
+                android:scaleType="fitXY"
+                android:background="#00000000"/>
+
+            <ImageButton
+                android:id="@+id/bt_detail_detection"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@drawable/jcff_uns"
+                android:background="#00000000"
+                android:scaleType="fitXY" />
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ListView
+        android:id="@+id/lv_detail"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="9"
+        android:clickable="false"
+        android:divider="#999999"
+        android:dividerHeight="2dp"
+        android:layout_margin="@dimen/activity_vertical_margin"/>
+
+</LinearLayout>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f5f5f5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_num_search"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@drawable/bg_search"
+            android:drawableLeft="#00ffffff"
+            android:drawablePadding="15dp"
+            android:hint="请输入化学品编号"/>
+        <ImageButton
+            android:id="@+id/bt_num_search"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bt_bgsearch"
+            android:background="#00000000"
+            />
+
+        <!--<Button-->
+            <!--android:id="@+id/bt_num_search"-->
+            <!--android:layout_width="0dip"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="search"-->
+            <!--android:background="@color/color1"/>-->
+
+    </LinearLayout>
+
+    <!--<LinearLayout-->
+
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dip"-->
+        <!--android:layout_weight="1"-->
+        <!--android:orientation="horizontal">-->
+
+
+        <!--<RadioGroup-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="horizontal"-->
+
+            <!--&gt;-->
+
+            <!--<RadioButton-->
+                <!--android:id="@+id/rb_UN"-->
+                <!--android:layout_width="0dip"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:checked="true"-->
+                <!--android:text="UN号" />-->
+
+            <!--<RadioButton-->
+                <!--android:id="@+id/rb_CAS"-->
+                <!--android:layout_width="0dip"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="CAS号" />-->
+        <!--</RadioGroup>-->
+    <!--</LinearLayout>-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#999999" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <!--<Button-->
+            <!--android:id="@+id/bt_UN"-->
+            <!--android:layout_width="0dip"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="UN号检索"-->
+            <!--android:background="@color/colorAccent"/>-->
+        <ImageButton
+            android:id="@+id/bt_UN"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bt_un_selected"
+            android:background="#00000000"
+            />
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="0.01"
+            android:background="#999999" />
+        <ImageButton
+            android:id="@+id/bt_CAS"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bt_cas_unselected"
+            android:background="#00000000"
+            />
+
+        <!--<Button-->
+            <!--android:id="@+id/bt_CAS"-->
+            <!--android:layout_width="0dip"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="CAS号检索"-->
+            <!--android:background="@color/colorPrimary"-->
+            />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="6"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#999999" />
+
+        <ListView
+            android:id="@+id/lv_num_searchResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+/>
+    </LinearLayout>
+</LinearLayout>

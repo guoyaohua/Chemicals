@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_margin="12dp"
+    android:orientation="horizontal">
+
+    <!--<TextView-->
+    <!--android:layout_width="0dip"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="0.7"-->
+    <!--android:gravity="center"-->
+    <!--android:textSize="16dp" />-->
+
+    <TextView
+        android:id="@+id/tv_lvItem_cn_name"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:text="cn_name"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tv_lvItem_en_name"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:textSize="16dp" />
+
+    <TextView
+
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tv_lvItem_num"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="16dp" />
+
+    <!--<ImageView-->
+        <!--android:layout_width="0dip"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@color/colorPrimaryDark" />-->
+    <ImageView
+        android:contentDescription="@null"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:adjustViewBounds="true"
+        android:scaleType="fitStart"
+        android:src="@drawable/ghs_rbt"
+        android:background="#00000000"
+        />
+</LinearLayout>
