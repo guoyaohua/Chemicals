@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 //test git 123
+//在测试一遍
 /**
  * Created by John Kwok on 2016/7/22.
  */
