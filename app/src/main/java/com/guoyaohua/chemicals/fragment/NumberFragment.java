@@ -91,7 +91,7 @@ public class NumberFragment extends Fragment implements View.OnClickListener {
         lv_num_searchResult.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position != 0) {
+
                     TextView tv = (TextView) view.findViewById(R.id.num_item_name);
                     String name = tv.getText().toString();
 
@@ -100,15 +100,6 @@ public class NumberFragment extends Fragment implements View.OnClickListener {
                     intent.putExtra("cn_name", name);
                     startActivity(intent);
 
-
-
-                  /*  Intent intent = new Intent();
-                    intent.setClass(getContext(), ChemicalDetail.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("cn_name", args);
-                    intent.putExtras(bundle);
-                    startActivity(intent);*/
-                }
             }
         });
         initData();
@@ -126,11 +117,11 @@ public class NumberFragment extends Fragment implements View.OnClickListener {
             //构建搜索所需要的Listview的adapter
             List<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
             HashMap<String, Object> map;
-            map = new HashMap<String, Object>();
-            map.put("cn_name", "名称");
-            map.put("CAS", "CAS编号");
-            map.put("UN", "UN编号");
-            listItem.add(map);
+//            map = new HashMap<String, Object>();
+//            map.put("cn_name", "名称");
+//            map.put("CAS", "CAS编号");
+//            map.put("UN", "UN编号");
+//            listItem.add(map);
             curson.moveToNext();
             for (int i = 0; i < curson.getCount(); i++, curson.moveToNext()) {
 
@@ -184,11 +175,11 @@ public class NumberFragment extends Fragment implements View.OnClickListener {
                     //构建搜索所需要的Listview的adapter
                     List<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
                     HashMap<String, Object> map;
-                    map = new HashMap<String, Object>();
-                    map.put("cn_name", "名称");
-                    map.put("CAS", "CAS编号");
-                    map.put("UN", "UN编号");
-                    listItem.add(map);
+//                    map = new HashMap<String, Object>();
+//                    map.put("cn_name", "名称");
+//                    map.put("CAS", "CAS编号");
+//                    map.put("UN", "UN编号");
+//                    listItem.add(map);
                     cursor.moveToNext();
                     for (int i = 0; i < cursor.getCount(); i++, cursor.moveToNext()) {
 
@@ -213,11 +204,11 @@ public class NumberFragment extends Fragment implements View.OnClickListener {
                     //构建搜索所需要的Listview的adapter
                     List<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
                     HashMap<String, Object> map;
-                    map = new HashMap<String, Object>();
-                    map.put("cn_name", "名称");
-                    map.put("CAS", "CAS编号");
-                    map.put("UN", "UN编号");
-                    listItem.add(map);
+//                    map = new HashMap<String, Object>();
+//                    map.put("cn_name", "名称");
+//                    map.put("CAS", "CAS编号");
+//                    map.put("UN", "UN编号");
+//                    listItem.add(map);
                     cursor.moveToNext();
                     for (int i = 0; i < cursor.getCount(); i++, cursor.moveToNext()) {
                         map = new HashMap<String, Object>();
