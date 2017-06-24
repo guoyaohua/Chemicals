@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.guoyaohua.chemicals.ChemicalDetail;
 import com.guoyaohua.chemicals.ChemicalDetailActivity;
@@ -36,7 +37,7 @@ public class GHSFragment extends Fragment {
     public static SimpleAdapter adapter_GHS;
     public static SimpleAdapter adapter_name;
     String[] GHS = {"爆炸品", "压缩气体和液化气体", "易燃液体", "易燃固体", "氧化剂", "毒害品", "放射性物品", "腐蚀品", "其他化学品"};
-    String[] GHS_count = {"11", "8", "16", "4", "6", "9", "3", "8", "2"};
+//   String[] GHS_count = {"11", "8", "16", "4", "6", "9", "3", "8", "2"}; //静态数据
     List<List<HashMap<String, Object>>> data_list; //用来保存返回的各个分类中化学品的名称。
     private View mParent;
     private FragmentActivity mActivity;
@@ -62,12 +63,12 @@ public class GHSFragment extends Fragment {
             data_list.add(startSearch(GHS[i]));
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("GHS_name", GHS[i]);
-//            if(!data_list.isEmpty()) {
-//                map.put("count", data_list.get(i).size());//用于存放各种类化学品的数目
-                map.put("count", GHS_count[i]);//用于存放各种类化学品的数目
-//            }else{
-//                map.put("count", 0);
-//           }
+            if(!data_list.isEmpty()) {
+                map.put("count", data_list.get(i).size());//用于存放各种类化学品的数目
+//                map.put("count", GHS_count[i]);//用于存放各种类化学品的数目
+            }else{
+                map.put("count", 0);
+           }
             GHS_list.add(map);
         }
         adapter_GHS = new SimpleAdapter(getContext(), GHS_list,
@@ -79,12 +80,16 @@ public class GHSFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (state) {
                     case STATE_GHS:
-                        adapter_name = new SimpleAdapter(getContext(), data_list.get(position),
-                                R.layout.ghs_item_layout, new String[]{"cn_name"},
-                                new int[]{R.id.GHS_item_name});
-                        lv_GHS.setAdapter(adapter_name);
+                        if(data_list.get(position).size()==0){//该分类没有任何化学品
+                            Toast.makeText(getContext(), "该GHS分类下没有收录危化品", Toast.LENGTH_SHORT).show();
+                        }else{//该分类存在化学品
+                            adapter_name = new SimpleAdapter(getContext(), data_list.get(position),
+                                    R.layout.ghs_item_layout, new String[]{"cn_name"},
+                                    new int[]{R.id.GHS_item_name});
+                            lv_GHS.setAdapter(adapter_name);
 //                        lv_GHS.notify();
-                        state = STATE_NAME;
+                            state = STATE_NAME;
+                        }
                         break;
                     case STATE_NAME:
                         TextView tv = (TextView) view.findViewById(R.id.GHS_item_name);

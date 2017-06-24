@@ -25,10 +25,13 @@ import com.guoyaohua.chemicals.ChemicalDetailActivity;
 import com.guoyaohua.chemicals.MyDatabaseHelper;
 import com.guoyaohua.chemicals.R;
 import com.guoyaohua.chemicals.Welcome;
+import com.guoyaohua.chemicals.entity.NameSearchEntity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+
 
 /**
  * Created by John Kwok on 2016/7/12.
@@ -52,8 +55,8 @@ public class NameFragment extends Fragment implements View.OnClickListener {
     private SimpleAdapter simpleAdapter_search;//英文搜索的Adapter
 
     //用来保存拼音/英文名称各个字母开头的数目  此处直接定义，不用每次查库。
-    private int[] cn_num = {1, 4, 1, 1, 2, 6, 1, 7, 7, 1, 8, 1, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 6, 0};
-    private int[] en_num = {7, 3, 2, 5, 2,2, 1, 7, 3, 7, 9, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0};
+ //   private int[] cn_num = {1, 4, 1, 1, 2, 6, 1, 7, 7, 1, 8, 1, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 6, 0};
+ //   private int[] en_num = {7, 3, 2, 5, 2,2, 1, 7, 3, 7, 9, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0};
 
     @Nullable
     @Override
@@ -67,9 +70,8 @@ public class NameFragment extends Fragment implements View.OnClickListener {
         super.onActivityCreated(savedInstanceState);
         state = CN_ALPHABET_INDEX_STATE; //初始化状态；
         mParent = getView();
-
         mActivity = getActivity();
-
+        initData();
         et_search = (EditText) mParent.findViewById(R.id.et_search);
         bt_search = (ImageButton) mParent.findViewById(R.id.bt_search);
         bt_cnSearch = (ImageButton) mParent.findViewById(R.id.bt_cnSearch);
@@ -116,7 +118,7 @@ public class NameFragment extends Fragment implements View.OnClickListener {
         for (int i = 0; i < 26; i++) {
             map = new HashMap<String, Object>();
             map.put("ItemText", alphabet);
-            map.put("num", cn_num[i]);
+            map.put("num", NameSearchEntity.CN_SearchResult.get(i).size());
             alphabet++;
             listItem.add(map);
         }
@@ -134,7 +136,7 @@ public class NameFragment extends Fragment implements View.OnClickListener {
         for (int i = 0; i < 26; i++) {
             map_en = new HashMap<String, Object>();
             map_en.put("ItemText", alphabet_en);
-            map_en.put("num", en_num[i]);
+            map_en.put("num", NameSearchEntity.EN_SearchResult.get(i).size());
             alphabet_en++;
             listItem_en.add(map_en);
         }
@@ -146,9 +148,9 @@ public class NameFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (state) {
-                    case CN_ALPHABET_INDEX_STATE:
+                    case CN_ALPHABET_INDEX_STATE://中文拼音状态，点击后进入化学品列表
 //                        Toast.makeText(getContext(), "此时是拼音索引状态，点击了" + position, Toast.LENGTH_SHORT).show();
-                        TextView tv1 = (TextView) view.findViewById(R.id.tv_lvItem_cn_name);
+                        /*TextView tv1 = (TextView) view.findViewById(R.id.tv_lvItem_cn_name);
                         String args1 = tv1.getText().toString();
                         Cursor c1 = Welcome.sqLite.rawQuery("select * from " +
                                 MyDatabaseHelper.TABLENAME +
@@ -165,18 +167,23 @@ public class NameFragment extends Fragment implements View.OnClickListener {
                                 map.put("en_name", c1.getString(c1.getColumnIndex("en_name")));
                                 listItem.add(map);
                             }
-                            c1.close();
-                            simpleAdapter_search = new SimpleAdapter(getContext(), listItem,
+                            c1.close();*/
+                        if(NameSearchEntity.CN_SearchResult.get(position).size()==0){
+                            Toast.makeText(getContext(), "该分类下无化学品", Toast.LENGTH_SHORT).show();
+                        }else{
+                            simpleAdapter_search = new SimpleAdapter(getContext(), NameSearchEntity.CN_SearchResult.get(position),
                                     R.layout.searchresult_item_layout, new String[]{"cn_name", "en_name"},
                                     new int[]{R.id.tv_lvItem_cn_name, R.id.tv_lvItem_en_name});
                             lv_searchResult.setAdapter(simpleAdapter_search);
+
+                            pre_state = state;
+                            state = NAME_SEARCH_STATE;
                         }
-                        pre_state = state;
-                        state = NAME_SEARCH_STATE;
+
                         break;
-                    case EN_ALPHABET_INDEX_STATE:
+                    case EN_ALPHABET_INDEX_STATE://英文首字母状态，点击后进入化学品列表
 //                      Toast.makeText(getContext(), "此时是英文字母索引状态，点击了" + position, Toast.LENGTH_SHORT).show();
-                        TextView tv2 = (TextView) view.findViewById(R.id.tv_lvItem_cn_name);
+                        /*TextView tv2 = (TextView) view.findViewById(R.id.tv_lvItem_cn_name);
                         String args2 = tv2.getText().toString();
                         Cursor c2 = Welcome.sqLite.rawQuery("select * from " +
                                 MyDatabaseHelper.TABLENAME +
@@ -194,15 +201,19 @@ public class NameFragment extends Fragment implements View.OnClickListener {
                                 map.put("cn_name", c2.getString(c2.getColumnIndex("cn_name")));
                                 listItem.add(map);
                             }
-                            c2.close();
-                            simpleAdapter_search = new SimpleAdapter(getContext(), listItem,
+                            c2.close();*/
+                        if(NameSearchEntity.EN_SearchResult.get(position).size()==0){
+                            Toast.makeText(getContext(), "该分类下无化学品", Toast.LENGTH_SHORT).show();
+                        }else{
+                            simpleAdapter_search = new SimpleAdapter(getContext(), NameSearchEntity.EN_SearchResult.get(position),
                                     R.layout.searchresult_item_layout, new String[]{"cn_name", "en_name"}, new int[]{R.id.tv_lvItem_cn_name, R.id.tv_lvItem_en_name});
                             lv_searchResult.setAdapter(simpleAdapter_search);
+                             pre_state = state;
+                            state = NAME_SEARCH_STATE;
                         }
-                        pre_state = state;
-                        state = NAME_SEARCH_STATE;
+
                         break;
-                    case NAME_SEARCH_STATE:
+                    case NAME_SEARCH_STATE://检索结果状态，listview中显示的是化学品，点击后进入化学品详情
                         TextView tv3 = (TextView) view.findViewById(R.id.tv_lvItem_cn_name);
                         String name = tv3.getText().toString();
 
@@ -233,6 +244,64 @@ public class NameFragment extends Fragment implements View.OnClickListener {
 
     }
 
+    private void initData() {
+//        CN_SearchResult =  new ArrayList<List<HashMap<String, Object>>>();
+//        EN_SearchResult = new ArrayList<List<HashMap<String, Object>>>();
+        //1.初始化中文拼音数据
+        if (NameSearchEntity.CN_SearchResult.isEmpty()) {//拼音检索数据还未初始化
+            char alphabet = 'A';
+            Cursor c1 = null;
+            for (int j = 0; j < 26; j++) {
+                 c1 = Welcome.sqLite.rawQuery("select * from " +
+                        MyDatabaseHelper.TABLENAME +
+                        " where pinyin like '" + alphabet + "%'", null);  //关键字搜索。在整个字符串中搜索某个关键字。
+                if (c1 != null) {
+                    //构建搜索所需要的Listview的adapter
+                    List<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
+                    HashMap<String, Object> map;
+                    c1.moveToNext();
+                    for (int i = 0; i < c1.getCount(); i++, c1.moveToNext()) {
+
+                        map = new HashMap<String, Object>();
+                        map.put("cn_name", c1.getString(c1.getColumnIndex("cn_name")));
+                        map.put("en_name", c1.getString(c1.getColumnIndex("en_name")));
+                        listItem.add(map);
+                    }
+                    NameSearchEntity.CN_SearchResult.add(listItem);
+
+                }
+                alphabet++;
+            }
+            c1.close();
+        }
+        //2.初始化英文首字母检索数据
+        if (NameSearchEntity.EN_SearchResult.isEmpty()) {//英文首字母检索数据还未初始化
+            char alphabet = 'A';
+            Cursor c1 = null;
+            for (int j = 0; j < 26; j++) {
+                c1 = Welcome.sqLite.rawQuery("select * from " +
+                        MyDatabaseHelper.TABLENAME +
+                        " where en_name like '" + alphabet + "%'", null);  //关键字搜索。在整个字符串中搜索某个关键字。
+                if (c1 != null) {
+                    //构建搜索所需要的Listview的adapter
+                    List<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
+                    HashMap<String, Object> map;
+                    c1.moveToNext();
+                    for (int i = 0; i < c1.getCount(); i++, c1.moveToNext()) {
+
+                        map = new HashMap<String, Object>();
+                        map.put("cn_name", c1.getString(c1.getColumnIndex("cn_name")));
+                        map.put("en_name", c1.getString(c1.getColumnIndex("en_name")));
+                        listItem.add(map);
+                    }
+                    NameSearchEntity.EN_SearchResult.add(listItem);
+
+                }
+                alphabet++;
+            }
+            c1.close();
+        }
+    }
     @Override
     public void onClick(View v) {
 

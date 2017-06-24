@@ -41,7 +41,7 @@ import java.util.List;
  * Created by 谢仪頔 on 2016/7/18.
  */
 public class tool_tool extends AppCompatActivity {
-    public static String tool_tool_title[] = new String[]{"危险化学品名录汇编", "危险化学品相关法规", "危险化学品事故应急处置", "危险化学品事故消防救援", "危险化学品事故环境应急及弃物处置建议"};
+    public static String tool_tool_title[] = new String[]{"危险化学品名录汇编", "危险化学品相关法规", "危险化学品事故应急处置", "危险化学品事故消防救援", "危化品事故环境应急处置建议"};
     private ListView mList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,14 +63,13 @@ public class tool_tool extends AppCompatActivity {
                 Intent intent = null;
                 switch (position) {
                     case 0:
-                        //intent = new Intent(view.getContext(), tool_tool.class);
-                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://minglu.707070.cn/show-2391965.html")));
+
                         break;
                     case 1:
-                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://wenku.baidu.com/link?url=XtJytbtXBLEYhKYGysCWQaCmMjYlYx4MCPZSjJgy9MCTmDrnGb56OVebx4s1aiVd6oEOvPeYGT7C2ZrbXF7t6cMJPl3SmBq4S9QasqA08Ne")));
+//                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://wenku.baidu.com/link?url=XtJytbtXBLEYhKYGysCWQaCmMjYlYx4MCPZSjJgy9MCTmDrnGb56OVebx4s1aiVd6oEOvPeYGT7C2ZrbXF7t6cMJPl3SmBq4S9QasqA08Ne")));
                         break;
                     case 2:
-                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.guanyang.gov.cn/(S(msdpl1bt0v3s2ponstohswoz))/News/Display.aspx?aid=110112")));
+//                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.guanyang.gov.cn/(S(msdpl1bt0v3s2ponstohswoz))/News/Display.aspx?aid=110112")));
                         break;
                     case 3:
                         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://119.china.com.cn/zbjs/txt/2014-04/17/content_6828361.htm")));

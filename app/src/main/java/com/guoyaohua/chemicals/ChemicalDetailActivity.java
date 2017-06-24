@@ -187,7 +187,7 @@ public class ChemicalDetailActivity extends AppCompatActivity implements View.On
     private void test() {
 
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-            File file = new File(Environment.getExternalStorageDirectory() + "/ChemicalPDF/test.pdf");
+            File file = new File(Environment.getExternalStorageDirectory() + "/ChemicalPDF/反应网络.pdf");
             Intent intent = new Intent("android.intent.action.VIEW");
             intent.addCategory("android.intent.category.DEFAULT");
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
