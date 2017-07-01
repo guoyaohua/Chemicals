@@ -76,11 +76,12 @@ public class ChemicalDetailActivity extends AppCompatActivity implements View.On
 
     private void initFragment() {
         fragments = new ArrayList<Fragment>();
-        fragments.add(new InformationFrgment());
-        fragments.add(new FeatureFragment());
+        fragments.add(new DisposalFragment());
         fragments.add(new DangerFragment());
         fragments.add(new ProtectFragment());
-        fragments.add(new DisposalFragment());
+        fragments.add(new InformationFrgment());
+        fragments.add(new FeatureFragment());
+
     }
 
     private void initData() {
@@ -164,19 +165,19 @@ public class ChemicalDetailActivity extends AppCompatActivity implements View.On
 
         if (v == bt_detail_info) {
             bt_detail_info.setImageDrawable(getResources().getDrawable(R.drawable.jbxx));
-            pager.setCurrentItem(0);
+            pager.setCurrentItem(3);
         } else if (v == bt_detail_features) {
             bt_detail_features.setImageDrawable(getResources().getDrawable(R.drawable.lhtxjyt));
-            pager.setCurrentItem(1);
+            pager.setCurrentItem(4);
         } else if (v == bt_detail_danger) {
             bt_detail_danger.setImageDrawable(getResources().getDrawable(R.drawable.wxx));
-            pager.setCurrentItem(2);
+            pager.setCurrentItem(1);
         } else if (v == bt_detail_protect) {
             bt_detail_protect.setImageDrawable(getResources().getDrawable(R.drawable.fhjy));
-            pager.setCurrentItem(3);
+            pager.setCurrentItem(2);
         } else if (v == bt_detail_disposal) {
             bt_detail_disposal.setImageDrawable(getResources().getDrawable(R.drawable.yjcz));
-            pager.setCurrentItem(4);
+            pager.setCurrentItem(0);
         } else if (v == bt_detail_detection) {
             bt_detail_detection.setImageDrawable(getResources().getDrawable(R.drawable.jcff));
 //            Toast.makeText(this, "功能待加入", Toast.LENGTH_SHORT).show();
@@ -210,19 +211,19 @@ public class ChemicalDetailActivity extends AppCompatActivity implements View.On
         bt_detail_detection.setImageDrawable(getResources().getDrawable(R.drawable.jcff_uns));
 
         switch (curPosition) {
-            case 0:
+            case 3:
                 bt_detail_info.setImageDrawable(getResources().getDrawable(R.drawable.jbxx));
                 break;
-            case 1:
+            case 4:
                 bt_detail_features.setImageDrawable(getResources().getDrawable(R.drawable.lhtxjyt));
                 break;
-            case 2:
+            case 1:
                 bt_detail_danger.setImageDrawable(getResources().getDrawable(R.drawable.wxx));
                 break;
-            case 3:
+            case 2:
                 bt_detail_protect.setImageDrawable(getResources().getDrawable(R.drawable.fhjy));
                 break;
-            case 4:
+            case 0:
                 bt_detail_disposal.setImageDrawable(getResources().getDrawable(R.drawable.yjcz));
                 break;
             case 5:

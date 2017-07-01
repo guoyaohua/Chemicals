@@ -14,11 +14,10 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.guoyaohua.chemicals.AboutActivity;
+import com.guoyaohua.chemicals.IntroduceActivity;
 import com.guoyaohua.chemicals.R;
-import com.guoyaohua.chemicals.tool_instruction;
-import com.guoyaohua.chemicals.tool_set;
 import com.guoyaohua.chemicals.tool_tool;
-import com.guoyaohua.chemicals.tool_we;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,7 +27,7 @@ import java.util.List;
  * Created by John Kwok on 2016/7/12.
  */
 public class ToolFragment extends Fragment {
-    public static String tool_title[] = new String[]{"实用工具", "使用方法", "设置", "我们"};
+    public static String tool_title[] = new String[]{"实用手册", "程序介绍", "关 于"};
     TextView mText = null;
     private View mParent;
     private FragmentActivity mActivity;
@@ -50,7 +49,7 @@ public class ToolFragment extends Fragment {
         mList = (ListView) mParent.findViewById(R.id.lv_tool);
         List<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
         HashMap<String, Object> map;
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 3; i++) {
             map = new HashMap<String, Object>();
             map.put("tool_title", tool_title[i]);
             list.add(map);
@@ -67,14 +66,12 @@ public class ToolFragment extends Fragment {
                         intent = new Intent(view.getContext(), tool_tool.class);
                         break;
                     case 1:
-                        intent = new Intent(view.getContext(), tool_instruction.class);
+                        intent = new Intent(view.getContext(), IntroduceActivity.class);
                         break;
                     case 2:
-                        intent = new Intent(view.getContext(), tool_set.class);
+                        intent = new Intent(view.getContext(), AboutActivity.class);
                         break;
-                    case 3:
-                        intent = new Intent(view.getContext(), tool_we.class);
-                        break;
+
                 }
                 if (intent != null) {
                     startActivity(intent);
