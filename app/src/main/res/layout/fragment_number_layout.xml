@@ -135,6 +135,7 @@
         <ListView
             android:id="@+id/lv_num_searchResult"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layoutAnimation="@anim/list_anim_layout" />
     </LinearLayout>
 </LinearLayout>

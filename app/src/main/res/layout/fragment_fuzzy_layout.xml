@@ -81,28 +81,28 @@
             android:id="@+id/cb_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="理化特性"
-            android:checked="true"/>
+            android:checked="true"
+            android:text="理化特性" />
         <CheckBox
             android:id="@+id/cb_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="爆炸危险"
             android:checked="false"
+            android:text="爆炸危险"
             />
         <CheckBox
             android:id="@+id/cb_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="健康危害"
             android:checked="false"
+            android:text="健康危害"
             />
         <CheckBox
             android:id="@+id/cb_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="环境影响"
             android:checked="false"
+            android:text="环境影响"
             />
 
     </LinearLayout>
@@ -117,7 +117,8 @@
         <ListView
             android:id="@+id/lv_fuzzy_searchResult"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layoutAnimation="@anim/list_anim_layout" />
         <!--android:divider="#00000000"-->
 
     </LinearLayout>

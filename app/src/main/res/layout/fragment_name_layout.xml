@@ -110,7 +110,8 @@
         <ListView
             android:id="@+id/lv_searchResult"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layoutAnimation="@anim/list_anim_layout" />
         <!--android:divider="#00000000"-->
 
     </LinearLayout>
