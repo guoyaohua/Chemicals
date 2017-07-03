@@ -1,8 +1,6 @@
 package com.guoyaohua.chemicals;
 
-import android.app.ActivityManager;
-import android.content.Context;
-import android.content.DialogInterface;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,10 +8,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class AboutActivity extends AppCompatActivity implements View.OnClickListener {
     private Button bt_intro;
     private Button bt_update;
     private Button bt_exit;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        App app = (App) getApplication();//获取应用程序全局的实例引用
+        app.activities.remove(this); //把当前Activity从集合中移除
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +28,9 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_about_layout);
         setTitle("关于");
         initWidget();
+        App app = (App) getApplication();//获取应用程序全局的实例引用
+        app.activities.add(this);  //把当前Activity放入集合中
+
     }
 
     /**
@@ -48,10 +58,11 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent);
                 break;
             case R.id.bt_exit:
-                android.os.Process.killProcess(android.os.Process.myPid());
-
-
-
+                App app = (App) getApplication();
+                List<Activity> activities = app.activities;
+                for (Activity act : activities) {
+                    act.finish();//显式结束
+                }
                 break;
         }
     }

@@ -71,6 +71,16 @@ public class ChemicalDetailActivity extends AppCompatActivity implements View.On
             }
         };
         pager.setAdapter(fragmentPagerAdapter);
+        App app = (App) getApplication();//获取应用程序全局的实例引用
+        app.activities.add(this);  //把当前Activity放入集合中
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        App app = (App) getApplication();//获取应用程序全局的实例引用
+        app.activities.remove(this); //把当前Activity从集合中移除
 
     }
 

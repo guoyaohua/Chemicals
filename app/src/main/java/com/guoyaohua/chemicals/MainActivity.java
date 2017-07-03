@@ -66,6 +66,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initFragment();
 
         initPager();
+        App app = (App) getApplication();//获取应用程序全局的实例引用
+        app.activities.add(this);  //把当前Activity放入集合中
+
     }
 
 //    public void setFragmentIndicator(int whichIsDefault) {
