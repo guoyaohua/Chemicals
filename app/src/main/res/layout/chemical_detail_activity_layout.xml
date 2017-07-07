@@ -94,7 +94,7 @@
                 android:adjustViewBounds="true"
                 android:background="#00000000"
                 android:scaleType="fitXY"
-                android:src="@drawable/jcff_uns" />
+                android:src="@drawable/button_select" />
 
 
         </LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="canvas">#FF404040</color>
+    <color name="bar">#C0202020</color>
+    <color name="text">#FFFFFFFF</color>
+    <color name="name">#FF000000</color>
+    <color name="info">#C0505050</color>
+    <color name="titlebar_background_start">#8B1A1A</color>
+    <color name="titlebar_background_end">#CD2626</color>
+    <color name="list_bg_1">#000000</color>
+    <color name="list_bg_2">#171717</color>
+
+</resources>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/annot_note_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:background="#AFAFAF"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Link Type"
+            android:textColor="#000000" />
+
+        <RadioGroup
+            android:id="@+id/annot_link_type"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/annot_link_type_page"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Go to Page"
+                android:textColor="#000000" />
+
+            <RadioButton
+                android:id="@+id/annot_link_type_uri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Link URI"
+                android:textColor="#000000" />
+
+            <RadioButton
+                android:id="@+id/annot_link_type_launch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Application Launch"
+                android:textColor="#000000" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Target"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/annot_link_target"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/annot_link_cancel"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Cancel" />
+
+        <Button
+            android:id="@+id/annot_link_add"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Add" />
+    </RelativeLayout>
+
+</LinearLayout>

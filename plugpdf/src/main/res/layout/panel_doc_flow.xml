@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/s_menu_bg"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/panel_display_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/st_btn_panel_view_mode_horizontal"
+        android:minHeight="1dp"
+        android:minWidth="1dp" />
+
+    <Button
+        android:id="@+id/panel_display_bilateral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/st_btn_panel_view_mode_bilateral"
+        android:minHeight="1dp"
+        android:minWidth="1dp" />
+
+    <Button
+        android:id="@+id/panel_display_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/st_btn_panel_view_mode_vertical"
+        android:minHeight="1dp"
+        android:minWidth="1dp" />
+
+    <Button
+        android:id="@+id/panel_display_thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/st_btn_panel_view_mode_thumbnail"
+        android:minHeight="1dp"
+        android:minWidth="1dp" />
+
+</LinearLayout>

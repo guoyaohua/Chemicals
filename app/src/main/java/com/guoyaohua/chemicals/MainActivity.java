@@ -6,12 +6,15 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.epapyrus.plugpdf.core.PlugPDF;
+import com.epapyrus.plugpdf.core.PlugPDFException;
 import com.guoyaohua.chemicals.fragment.FuzzyFragment;
 import com.guoyaohua.chemicals.fragment.GHSFragment;
 import com.guoyaohua.chemicals.fragment.NameFragment;
@@ -48,6 +51,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        mFragments[2] = getSupportFragmentManager().findFragmentById(R.id.fragment_number);
 //        mFragments[3] = getSupportFragmentManager().findFragmentById(R.id.fragment_fuzzy);
 //        mFragments[4] = getSupportFragmentManager().findFragmentById(R.id.fragment_tool);
+        //初始化PulgPDF SDK
+        try {
+            // Initialize PlugPDF with a license key.
+            PlugPDF.init(getApplicationContext(),
+                    "43F5EGBB7GG27BF8ED3459C9GFD5G3HAA35HG97DF6AHEAAGAH9DFBF5");
+        } catch (PlugPDFException.InvalidLicense ex) {
+            Log.e("PlugPDF", "error ", ex);
+            // Handle invalid license exceptions.
+        }
 
         bt_icon = (ImageButton) findViewById(R.id.ib_icon);
         bt_name = (ImageButton) findViewById(R.id.ib_name);

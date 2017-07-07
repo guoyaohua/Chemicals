@@ -2,7 +2,6 @@ package com.guoyaohua.chemicals;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
@@ -22,7 +21,6 @@ import com.guoyaohua.chemicals.fragment.FeatureFragment;
 import com.guoyaohua.chemicals.fragment.InformationFrgment;
 import com.guoyaohua.chemicals.fragment.ProtectFragment;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -166,13 +164,14 @@ public class ChemicalDetailActivity extends AppCompatActivity implements View.On
 
     @Override
     public void onClick(View v) {
-        bt_detail_info.setImageDrawable(getResources().getDrawable(R.drawable.jbxx_uns));
-        bt_detail_features.setImageDrawable(getResources().getDrawable(R.drawable.lhtxjyt_uns));
-        bt_detail_danger.setImageDrawable(getResources().getDrawable(R.drawable.wxx_uns));
-        bt_detail_protect.setImageDrawable(getResources().getDrawable(R.drawable.fhjy_uns));
-        bt_detail_disposal.setImageDrawable(getResources().getDrawable(R.drawable.yjcz_uns));
-        bt_detail_detection.setImageDrawable(getResources().getDrawable(R.drawable.jcff_uns));
-
+        if (v != bt_detail_detection) {
+            bt_detail_info.setImageDrawable(getResources().getDrawable(R.drawable.jbxx_uns));
+            bt_detail_features.setImageDrawable(getResources().getDrawable(R.drawable.lhtxjyt_uns));
+            bt_detail_danger.setImageDrawable(getResources().getDrawable(R.drawable.wxx_uns));
+            bt_detail_protect.setImageDrawable(getResources().getDrawable(R.drawable.fhjy_uns));
+            bt_detail_disposal.setImageDrawable(getResources().getDrawable(R.drawable.yjcz_uns));
+            //  bt_detail_detection.setImageDrawable(getResources().getDrawable(R.drawable.jcff_uns));
+        }
         if (v == bt_detail_info) {
             bt_detail_info.setImageDrawable(getResources().getDrawable(R.drawable.jbxx));
             pager.setCurrentItem(3);
@@ -189,56 +188,75 @@ public class ChemicalDetailActivity extends AppCompatActivity implements View.On
             bt_detail_disposal.setImageDrawable(getResources().getDrawable(R.drawable.yjcz));
             pager.setCurrentItem(0);
         } else if (v == bt_detail_detection) {
-            bt_detail_detection.setImageDrawable(getResources().getDrawable(R.drawable.jcff));
+            //   bt_detail_detection.setImageDrawable(getResources().getDrawable(R.drawable.jcff));
 //            Toast.makeText(this, "功能待加入", Toast.LENGTH_SHORT).show();
             test();
         }
     }
 
     private void test() {
+        //    PDFViewerHelper.openPDF(this, Environment.getExternalStorageDirectory() + "/ChemicalPDF/反应网络.pdf");
+//        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+//            File file = new File(Environment.getExternalStorageDirectory() + "/ChemicalPDF/反应网络.pdf");
+//            Intent intent = new Intent("android.intent.action.VIEW");
+//            intent.addCategory("android.intent.category.DEFAULT");
+//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//            Uri uri = Uri.fromFile(file);
+//            intent.setDataAndType(uri, "application/pdf");
+//            startActivity(intent);
+//        } else {
+//            Toast.makeText(this, "您的手机无法显示该文件", Toast.LENGTH_SHORT).show();
+//        }
+        Toast.makeText(this, "正在打开文件，请稍后......", Toast.LENGTH_SHORT).show();
+        //    ProgressDialog proDialog = ProgressDialog.show(this, "请稍后", "正在打开文件......");
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                Intent intent = new Intent();
+                intent.setClass(getApplicationContext(), PDFViewer.class);
+                intent.putExtra("filePath", Environment.getExternalStorageDirectory() + "/ChemicalPDF/反应网络.pdf");
+                intent.putExtra("title", cn_name + "_反应网络");
+                startActivity(intent);
+            }
+        }.start();
 
-        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-            File file = new File(Environment.getExternalStorageDirectory() + "/ChemicalPDF/反应网络.pdf");
-            Intent intent = new Intent("android.intent.action.VIEW");
-            intent.addCategory("android.intent.category.DEFAULT");
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            Uri uri = Uri.fromFile(file);
-            intent.setDataAndType(uri, "application/pdf");
-            startActivity(intent);
-        } else {
-            Toast.makeText(this, "您的手机无法显示该文件", Toast.LENGTH_SHORT).show();
-        }
-
+        //    proDialog.dismiss();
+        //    Toast.makeText(this, "正在打开文件，请稍后......", Toast.LENGTH_SHORT).show();
 
     }
 
     public void changeButtonIcon(int curPosition) {
-        bt_detail_info.setImageDrawable(getResources().getDrawable(R.drawable.jbxx_uns));
-        bt_detail_features.setImageDrawable(getResources().getDrawable(R.drawable.lhtxjyt_uns));
-        bt_detail_danger.setImageDrawable(getResources().getDrawable(R.drawable.wxx_uns));
-        bt_detail_protect.setImageDrawable(getResources().getDrawable(R.drawable.fhjy_uns));
-        bt_detail_disposal.setImageDrawable(getResources().getDrawable(R.drawable.yjcz_uns));
-        bt_detail_detection.setImageDrawable(getResources().getDrawable(R.drawable.jcff_uns));
+        if (curPosition != 5) {
 
-        switch (curPosition) {
-            case 3:
-                bt_detail_info.setImageDrawable(getResources().getDrawable(R.drawable.jbxx));
-                break;
-            case 4:
-                bt_detail_features.setImageDrawable(getResources().getDrawable(R.drawable.lhtxjyt));
-                break;
-            case 1:
-                bt_detail_danger.setImageDrawable(getResources().getDrawable(R.drawable.wxx));
-                break;
-            case 2:
-                bt_detail_protect.setImageDrawable(getResources().getDrawable(R.drawable.fhjy));
-                break;
-            case 0:
-                bt_detail_disposal.setImageDrawable(getResources().getDrawable(R.drawable.yjcz));
-                break;
-            case 5:
-                bt_detail_detection.setImageDrawable(getResources().getDrawable(R.drawable.jcff));
-                break;
+
+            bt_detail_info.setImageDrawable(getResources().getDrawable(R.drawable.jbxx_uns));
+            bt_detail_features.setImageDrawable(getResources().getDrawable(R.drawable.lhtxjyt_uns));
+            bt_detail_danger.setImageDrawable(getResources().getDrawable(R.drawable.wxx_uns));
+            bt_detail_protect.setImageDrawable(getResources().getDrawable(R.drawable.fhjy_uns));
+            bt_detail_disposal.setImageDrawable(getResources().getDrawable(R.drawable.yjcz_uns));
+            //   bt_detail_detection.setImageDrawable(getResources().getDrawable(R.drawable.jcff_uns));
+
+            switch (curPosition) {
+                case 3:
+                    bt_detail_info.setImageDrawable(getResources().getDrawable(R.drawable.jbxx));
+                    break;
+                case 4:
+                    bt_detail_features.setImageDrawable(getResources().getDrawable(R.drawable.lhtxjyt));
+                    break;
+                case 1:
+                    bt_detail_danger.setImageDrawable(getResources().getDrawable(R.drawable.wxx));
+                    break;
+                case 2:
+                    bt_detail_protect.setImageDrawable(getResources().getDrawable(R.drawable.fhjy));
+                    break;
+                case 0:
+                    bt_detail_disposal.setImageDrawable(getResources().getDrawable(R.drawable.yjcz));
+                    break;
+                //     case 5:
+                //            bt_detail_detection.setImageDrawable(getResources().getDrawable(R.drawable.jcff));
+                //            break;
+            }
         }
     }
 
@@ -252,9 +270,9 @@ public class ChemicalDetailActivity extends AppCompatActivity implements View.On
 //修改底部按钮图标状态
         changeButtonIcon(position);
         if (position == 3 || position == 4 || position == 5) {
-            ScrollView.fullScroll(ScrollView.FOCUS_RIGHT);
+            ScrollView.fullScroll(View.FOCUS_RIGHT);
         } else {
-            ScrollView.fullScroll(ScrollView.FOCUS_LEFT);
+            ScrollView.fullScroll(View.FOCUS_LEFT);
         }
 
     }

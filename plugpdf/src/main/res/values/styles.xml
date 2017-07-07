@@ -1,0 +1,17 @@
+<resources>
+
+    <style name="TopBar">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/topbar_height</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/top_bar_bg</item>
+        <!-- <item name="android:background">@drawable/titlebar_background</item> -->
+    </style>
+
+    <style name="TopBarItem">
+        <item name="android:layout_width">@dimen/topbar_item_weight</item>
+        <item name="android:layout_height">@dimen/topbar_item_height</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+</resources>
