@@ -9,7 +9,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -48,6 +51,16 @@ public class ChemicalDetailActivity extends AppCompatActivity implements View.On
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //activity动画切换效果
+        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+        Transition fade = TransitionInflater.from(this).inflateTransition(R.transition.fade);
+        //退出时使用
+        getWindow().setExitTransition(fade);
+        //第一次进入时使用
+        getWindow().setEnterTransition(fade);
+        //再次进入时使用
+        getWindow().setReenterTransition(fade);
+        /////////////////////////
         setContentView(R.layout.chemical_detail_activity_layout);
         getSupportActionBar().hide();
         initWidget();

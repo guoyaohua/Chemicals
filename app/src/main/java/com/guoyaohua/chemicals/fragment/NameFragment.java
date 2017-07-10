@@ -1,5 +1,6 @@
 package com.guoyaohua.chemicals.fragment;
 
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -214,6 +215,7 @@ public class NameFragment extends Fragment implements View.OnClickListener {
 
                         break;
                     case NAME_SEARCH_STATE://检索结果状态，listview中显示的是化学品，点击后进入化学品详情
+                        view.setTransitionName("name");
                         TextView tv3 = (TextView) view.findViewById(R.id.tv_lvItem_cn_name);
                         String name = tv3.getText().toString();
 
@@ -222,7 +224,8 @@ public class NameFragment extends Fragment implements View.OnClickListener {
                         Intent intent = new Intent();
                         intent.setClass(getContext(), ChemicalDetailActivity.class);
                         intent.putExtra("cn_name", name);
-                        startActivity(intent);
+                        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity(), view, "name").toBundle());
+//                        startActivity(intent);
                         break;
 
                     //test

@@ -1,5 +1,6 @@
 package com.guoyaohua.chemicals.fragment;
 
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -7,14 +8,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -93,13 +92,15 @@ public class FuzzyFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position != 0) {
+                    view.setTransitionName("name");
                     TextView tv = (TextView) view.findViewById(R.id.num_item_name);
                     String args = tv.getText().toString();
                     String name = (String) tv.getText();
                     Intent intent = new Intent();
                     intent.setClass(getContext(), ChemicalDetailActivity.class);
                     intent.putExtra("cn_name", name);
-                    startActivity(intent);
+//                    startActivity(intent);
+                    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity(), view, "name").toBundle());
                    /* Intent intent = new Intent();
                     intent.setClass(getContext(), ChemicalDetail.class);
                     Bundle bundle = new Bundle();

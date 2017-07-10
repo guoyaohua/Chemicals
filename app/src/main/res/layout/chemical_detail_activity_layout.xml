@@ -17,7 +17,8 @@
         android:gravity="center"
         android:text="乙烯"
         android:textColor="#EE8B5F"
-        android:textSize="24dip" />
+        android:textSize="24dip"
+        android:transitionName="name" />
 
     <HorizontalScrollView
         android:id="@+id/scrollView"

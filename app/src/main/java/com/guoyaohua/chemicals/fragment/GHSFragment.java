@@ -1,5 +1,6 @@
 package com.guoyaohua.chemicals.fragment;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -15,7 +16,6 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.guoyaohua.chemicals.ChemicalDetail;
 import com.guoyaohua.chemicals.ChemicalDetailActivity;
 import com.guoyaohua.chemicals.MyDatabaseHelper;
 import com.guoyaohua.chemicals.R;
@@ -92,12 +92,16 @@ public class GHSFragment extends Fragment {
                         }
                         break;
                     case STATE_NAME:
+                        //测试切换动画
+                        view.setTransitionName("name");
                         TextView tv = (TextView) view.findViewById(R.id.GHS_item_name);
                         String name = (String) tv.getText();
                         Intent intent = new Intent();
                         intent.setClass(getContext(), ChemicalDetailActivity.class);
                         intent.putExtra("cn_name", name);
-                        startActivity(intent);
+//                        startActivity(intent);
+//                        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+                        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity(), view, "name").toBundle());
                         break;
                 }
             }
