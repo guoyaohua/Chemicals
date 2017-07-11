@@ -3,7 +3,6 @@ package com.guoyaohua.chemicals;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -203,11 +202,11 @@ public class ChemicalDetailActivity extends AppCompatActivity implements View.On
         } else if (v == bt_detail_detection) {
             //   bt_detail_detection.setImageDrawable(getResources().getDrawable(R.drawable.jcff));
 //            Toast.makeText(this, "功能待加入", Toast.LENGTH_SHORT).show();
-            test();
+            startPDF();
         }
     }
 
-    private void test() {
+    private void startPDF() {
         //    PDFViewerHelper.openPDF(this, Environment.getExternalStorageDirectory() + "/ChemicalPDF/反应网络.pdf");
 //        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
 //            File file = new File(Environment.getExternalStorageDirectory() + "/ChemicalPDF/反应网络.pdf");
@@ -228,7 +227,7 @@ public class ChemicalDetailActivity extends AppCompatActivity implements View.On
                 super.run();
                 Intent intent = new Intent();
                 intent.setClass(getApplicationContext(), PDFViewer.class);
-                intent.putExtra("filePath", Environment.getExternalStorageDirectory() + "/ChemicalPDF/反应网络.pdf");
+                intent.putExtra("filePath", getFilesDir() + "/ChemicalPDF/反应网络.pdf");
                 intent.putExtra("title", cn_name + "_反应网络");
                 startActivity(intent);
             }

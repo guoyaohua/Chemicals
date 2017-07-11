@@ -48,7 +48,7 @@ public class PDFViewer extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        if (mReader.getDocument() != null) {
+        if (mReader != null && mReader.getDocument() != null) {
             mReader.save();
             mReader.clear();
         }

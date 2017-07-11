@@ -6,7 +6,6 @@ import android.content.res.AssetManager;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -77,10 +76,10 @@ public class Welcome extends Activity {
             e.printStackTrace();
         }
         for (int i = 0; i < pdfFilesName.length; i++) {
-            File file = new File(Environment.getExternalStorageDirectory() + "/ChemicalPDF/" + pdfFilesName[i]);
+            File file = new File(getFilesDir() + "/ChemicalPDF/" + pdfFilesName[i]);
             // 判断是否存在
             if (!file.exists()) {
-                File dir = new File(Environment.getExternalStorageDirectory() + "/ChemicalPDF");
+                File dir = new File(getFilesDir() + "/ChemicalPDF");
                 //先创建目录
                 if (!dir.exists()) {
                     dir.mkdir();//如果目录不存在，则创建目录
